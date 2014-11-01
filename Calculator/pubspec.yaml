@@ -1,0 +1,5 @@
+name: Calculator
+description: A sample web application
+dependencies:
+  angular: 0.12.0
+  browser: any
