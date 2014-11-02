@@ -50,6 +50,10 @@ class CalculatorController {
             number = (operation["num1"] % operation["num2"]).toString();
             break;
           }
+          RegExp exp = new RegExp("^[0-9]*\.[0]\$");
+          if(exp.hasMatch(number)){
+            number = number.replaceAll(".0", "");
+          }
           operation = {"num1":double.parse(number),"op":op,"num2":null};
           newNumber = true;
       }
@@ -74,6 +78,10 @@ class CalculatorController {
          case "%":
            number = (operation["num1"] % operation["num2"]).toString();
            break;
+        }
+        RegExp exp = new RegExp("^[0-9]*\.[0]\$");
+        if(exp.hasMatch(number)){
+          number = number.replaceAll(".0", "");
         }
         operation = {"num1":double.parse(number),"op":null,"num2":null};
         newNumber = true;
